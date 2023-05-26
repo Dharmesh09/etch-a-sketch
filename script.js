@@ -2,6 +2,7 @@ const container = document.getElementById("container");
 let rows = document.getElementsByClassName("gridRow");
 let cells = document.getElementsByClassName("cell");
 
+// console.log(container);
 // Creates a default grid sized 16x16
 function defaultGrid() {
     makeRows(16);
@@ -15,6 +16,7 @@ function makeRows(rowNum) {
     for (r = 0; r < rowNum; r++) {
         let row = document.createElement("div");
         container.appendChild(row).className = "gridRow";
+        // console.log(r);
     };
 };
 
@@ -24,7 +26,10 @@ function makeColumns(cellNum) {
         for (j = 0; j < cellNum; j++) {
             let newCell = document.createElement("div");
             rows[j].appendChild(newCell).className = "cell";
+            // console.log(j);
         };
 
     };
 };
+
+defaultGrid();
