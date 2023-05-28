@@ -1,7 +1,18 @@
 const container = document.getElementById("container");
-
+let btn = document.getElementById("size");
 const DEFAULT_SIZE = 25;
 let mouseDown = false;
+
+let size = 16;
+
+function askSize(){
+    size = prompt("Please enter required size: ");
+    if(size>100 || size < 1){
+        alert("Size must be between 1 and 100!");
+        askSize();
+    }
+    createGrid(size);
+}
 
 function createGrid(size) {
     container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -12,7 +23,6 @@ function createGrid(size) {
         const cell = document.createElement('div');
         cell.classList.add('cell');
         cell.addEventListener('mouseover', changeColor);
-        cell.addEventListener('mousedown', changeColor);
         container.appendChild(cell);
     }
 }
