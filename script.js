@@ -1,6 +1,7 @@
 const container = document.getElementById("container");
 let btn = document.getElementById("size");
-const DEFAULT_SIZE = 25;
+const DEFAULT_SIZE = 16;
+// const DEFAULT_COLOUR = black; 
 let mouseDown = false;
 
 let size = 16;
@@ -15,6 +16,7 @@ function askSize(){
 }
 
 function createGrid(size) {
+    container.innerHTML = "";
     container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
 
